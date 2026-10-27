@@ -232,15 +232,18 @@ To ensure maximum organic search traffic and rich preview cards on WhatsApp/Face
    - Format: `<title>Article Title | School Evolution</title>`
 2. **Meta Descriptions:**
    - Keep excerpts between 140–160 characters for best Google snippet display.
-3. **OpenGraph & Twitter Cards:**
+3. **OpenGraph & WhatsApp Preview Cards:**
    ```html
-   <meta property="og:title" content="Article Title">
-   <meta property="og:description" content="Brief excerpt...">
-   <meta property="og:image" content="https://school.digiritual.com/cover.jpg">
-   <meta property="og:url" content="https://school.digiritual.com/post.html?slug=...">
+   <meta property="og:type" content="website">
+   <meta property="og:site_name" content="School Evolution">
+   <meta property="og:title" content="School Evolution Blog | Insights for Modern Educational Institutions">
+   <meta property="og:description" content="Explore insights on EdTech, school ERP automation, smart classrooms, teaching innovation, and student safety.">
+   <meta property="og:image" content="https://school.digiritual.com/images/og-school-evolution.jpg">
+   <meta property="og:url" content="https://school.digiritual.com/">
    ```
-4. **Images:**
-   - Use educational images with 16:9 or 16:10 aspect ratio (1200x675 or 1200x750 pixels). Unsplash educational photos or high-res campus photography work best.
+4. **WhatsApp Image Specifications:**
+   - Pre-packaged branded banner located at `images/og-school-evolution.jpg` (1200x675, ~140KB optimized for instant mobile thumbnail caching).
+   - WhatsApp requires an absolute `https://` image URL to show the card.
 
 ---
 

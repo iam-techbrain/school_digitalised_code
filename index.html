@@ -5,10 +5,39 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>School Evolution Blog | Insights for Modern Educational Institutions</title>
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="School Evolution Blog | Insights for Modern Educational Institutions">
   <meta name="description"
     content="Explore insights on EdTech, school ERP automation, smart classrooms, teaching innovation, and student safety from School Evolution.">
   <meta name="keywords" content="School Evolution, School ERP, EdTech, Smart Classroom, Digiritual, Education Blog">
   <link rel="canonical" href="https://school.digiritual.com/">
+  <meta name="theme-color" content="#4f46e5">
+
+  <!-- Open Graph / Facebook / WhatsApp -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="School Evolution">
+  <meta property="og:url" content="https://school.digiritual.com/">
+  <meta property="og:title" content="School Evolution Blog | Insights for Modern Educational Institutions">
+  <meta property="og:description"
+    content="Explore insights on EdTech, school ERP automation, smart classrooms, teaching innovation, and student safety from School Evolution.">
+  <meta property="og:image" content="https://school.digiritual.com/images/og-school-evolution.jpg">
+  <meta property="og:image:secure_url" content="https://school.digiritual.com/images/og-school-evolution.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="675">
+  <meta property="og:image:alt" content="School Evolution - Innovating the Future of Digital Education">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@Digiritual">
+  <meta name="twitter:url" content="https://school.digiritual.com/">
+  <meta name="twitter:title" content="School Evolution Blog | Insights for Modern Educational Institutions">
+  <meta name="twitter:description"
+    content="Explore insights on EdTech, school ERP automation, smart classrooms, teaching innovation, and student safety from School Evolution.">
+  <meta name="twitter:image" content="https://school.digiritual.com/images/og-school-evolution.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%234f46e5'><path d='M12 2L1 7l11 5 9-4.09V17h2V7L12 2zM3.45 10.74L12 14.63l8.55-3.89V17l-8.55 3.89L3.45 17v-6.26z'/></svg>">
 
   <!-- Tailwind CSS CDN with Typography & Aspect Ratio plugins -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -102,9 +131,16 @@
         </nav>
 
         <!-- Right Action Buttons -->
-        <div class="flex items-center gap-3">
+        <div class="flex items-center gap-2 sm:gap-3">
+          <button id="share-blog-whatsapp"
+            class="inline-flex items-center gap-1.5 px-3 py-2 text-xs font-semibold text-emerald-700 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 rounded-lg transition shadow-sm"
+            title="Share this blog portal on WhatsApp">
+            <i data-lucide="message-circle" class="w-4 h-4 text-emerald-600"></i>
+            <span class="hidden sm:inline">Share on WhatsApp</span>
+          </button>
+
           <a href="admin.html"
-            class="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold text-brand-700 bg-brand-50 hover:bg-brand-100 border border-brand-200 rounded-lg transition shadow-sm">
+            class="inline-flex items-center gap-2 px-3.5 sm:px-4 py-2 text-xs sm:text-sm font-semibold text-brand-700 bg-brand-50 hover:bg-brand-100 border border-brand-200 rounded-lg transition shadow-sm">
             <i data-lucide="plus-circle" class="w-4 h-4"></i>
             <span class="hidden sm:inline">Publish Blog</span>
           </a>
@@ -128,6 +164,11 @@
         class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-100">Browse Articles</a>
       <a href="#newsletter-section"
         class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-100">Newsletter</a>
+      <button id="mobile-share-whatsapp"
+        class="w-full text-left flex items-center gap-2 px-3 py-2 rounded-md text-base font-medium text-emerald-700 bg-emerald-50 border border-emerald-200">
+        <i data-lucide="message-circle" class="w-4 h-4 text-emerald-600"></i>
+        <span>Share Blog on WhatsApp</span>
+      </button>
       <a href="admin.html"
         class="block px-3 py-2 rounded-md text-base font-medium text-brand-700 bg-brand-50 border border-brand-200">Publish
         New Post</a>

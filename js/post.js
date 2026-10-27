@@ -27,6 +27,28 @@ document.addEventListener("DOMContentLoaded", () => {
   // Set Title & Metadata
   document.title = `${post.title} | School Evolution`;
 
+  // Update dynamic Open Graph and Twitter meta tags
+  const setMeta = (idOrSelector, attr, val) => {
+    const el = document.getElementById(idOrSelector) || document.querySelector(idOrSelector);
+    if (el) el.setAttribute(attr, val);
+  };
+
+  const articleCanonicalUrl = window.location.href.split('#')[0];
+  setMeta("meta-title", "content", `${post.title} | School Evolution`);
+  setMeta("meta-description", "content", post.summary);
+  setMeta("canonical-url", "href", articleCanonicalUrl);
+  setMeta("og-title", "content", `${post.title} | School Evolution`);
+  setMeta("og-description", "content", post.summary);
+  setMeta("og-url", "content", articleCanonicalUrl);
+  if (post.coverImage) {
+    setMeta("og-image", "content", post.coverImage);
+    setMeta("og-image-secure", "content", post.coverImage);
+    setMeta("twitter-image", "content", post.coverImage);
+  }
+  setMeta("twitter-title", "content", `${post.title} | School Evolution`);
+  setMeta("twitter-description", "content", post.summary);
+  setMeta("twitter-url", "content", articleCanonicalUrl);
+
   // Populate Elements
   document.getElementById("post-breadcrumb-category").textContent = post.category;
   document.getElementById("post-breadcrumb-title").textContent = post.title;
@@ -92,7 +114,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const shareWhatsApp = document.getElementById("share-whatsapp");
   if (shareWhatsApp) {
     shareWhatsApp.addEventListener("click", () => {
-      window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(post.title + " - " + currentUrl)}`, "_blank");
+      const shareMessage = 
+        `📚 *${post.title}*\n\n` +
+        `💡 ${post.summary}\n\n` +
+        `📂 *Category:* ${post.category}\n` +
+        `✍️ *Author:* ${post.author.name} (${post.author.role})\n` +
+        `⏱️ *Read Time:* ${post.readTime}\n\n` +
+        `👉 *Read Full Article:* \n${currentUrl}\n\n` +
+        `_School Evolution • Insights for Modern Educational Institutions_`;
+      window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(shareMessage)}`, "_blank");
     });
   }
 

@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
 
             <!-- Author & Read More CTA -->
-            <div class="mt-8 pt-6 border-t border-slate-800 flex items-center justify-between">
+            <div class="mt-8 pt-6 border-t border-slate-800 flex flex-wrap items-center justify-between gap-4">
               <div class="flex items-center gap-3">
                 <img 
                   src="${featured.author.avatar}" 
@@ -92,13 +92,23 @@ document.addEventListener("DOMContentLoaded", () => {
                 </div>
               </div>
 
-              <a 
-                href="post.html?slug=${featured.slug}" 
-                class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-semibold text-xs sm:text-sm transition shadow-lg shadow-brand-600/30 group-hover:translate-x-1"
-              >
-                <span>Read Full</span>
-                <i data-lucide="arrow-right" class="w-4 h-4"></i>
-              </a>
+              <div class="flex items-center gap-2">
+                <button 
+                  onclick="sharePostToWhatsApp('${featured.slug}')" 
+                  class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-xs transition shadow-md"
+                  title="Share on WhatsApp"
+                >
+                  <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
+                  <span>WhatsApp</span>
+                </button>
+                <a 
+                  href="post.html?slug=${featured.slug}" 
+                  class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-semibold text-xs sm:text-sm transition shadow-lg shadow-brand-600/30 group-hover:translate-x-1"
+                >
+                  <span>Read Full</span>
+                  <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+              </div>
             </div>
 
           </div>
@@ -246,13 +256,22 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
           </div>
 
-          <a 
-            href="post.html?slug=${post.slug}" 
-            class="text-brand-600 hover:text-brand-700 font-semibold text-xs flex items-center gap-1 hover:translate-x-0.5 transition-transform"
-          >
-            <span>Read</span>
-            <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
-          </a>
+          <div class="flex items-center gap-2">
+            <button 
+              onclick="sharePostToWhatsApp('${post.slug}')" 
+              class="p-1.5 rounded-lg text-emerald-600 hover:bg-emerald-50 transition"
+              title="Share on WhatsApp"
+            >
+              <i data-lucide="message-circle" class="w-4 h-4"></i>
+            </button>
+            <a 
+              href="post.html?slug=${post.slug}" 
+              class="text-brand-600 hover:text-brand-700 font-semibold text-xs flex items-center gap-1 hover:translate-x-0.5 transition-transform"
+            >
+              <span>Read</span>
+              <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
         </div>
       </article>
     `).join("");
@@ -323,6 +342,40 @@ document.addEventListener("DOMContentLoaded", () => {
       toast.classList.add("translate-y-20", "opacity-0");
       toast.classList.remove("translate-y-0", "opacity-100");
     }, 4000);
+  };
+
+  // WhatsApp Portal Sharing
+  const handleSharePortal = () => {
+    const siteUrl = "https://school.digiritual.com/";
+    const message = 
+      `🎓 *School Evolution | Insights for Modern Educational Institutions*\n\n` +
+      `Explore expert guides on EdTech, School ERP automation, smart classrooms, teaching innovation, and student safety.\n\n` +
+      `👉 *Visit our blog portal:* \n${siteUrl}\n\n` +
+      `_School Evolution by Digiritual_`;
+    window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(message)}`, "_blank");
+  };
+
+  const shareBlogBtn = document.getElementById("share-blog-whatsapp");
+  if (shareBlogBtn) shareBlogBtn.addEventListener("click", handleSharePortal);
+
+  const mobileShareBtn = document.getElementById("mobile-share-whatsapp");
+  if (mobileShareBtn) mobileShareBtn.addEventListener("click", handleSharePortal);
+
+  // Global helper for sharing single posts from index.html
+  window.sharePostToWhatsApp = function (slug) {
+    const post = getPostBySlug(slug);
+    if (!post) return;
+    const origin = window.location.origin.includes("http") ? window.location.origin : "https://school.digiritual.com";
+    const postUrl = `${origin}/post.html?slug=${encodeURIComponent(post.slug)}`;
+    const message = 
+      `📚 *${post.title}*\n\n` +
+      `💡 ${post.summary}\n\n` +
+      `📂 *Category:* ${post.category}\n` +
+      `✍️ *Author:* ${post.author.name} (${post.author.role})\n` +
+      `⏱️ *Read Time:* ${post.readTime}\n\n` +
+      `👉 *Read Full Article:* \n${postUrl}\n\n` +
+      `_School Evolution • Insights for Modern Educational Institutions_`;
+    window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(message)}`, "_blank");
   };
 
   // Initial Execution
