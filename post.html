@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Article Reader | School Evolution</title>
+  <meta name="description" content="Read full article on School Evolution Blog">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eef2ff',
+              100: '#e0e7ff',
+              200: '#c7d2fe',
+              300: '#a5b4fc',
+              400: '#818cf8',
+              500: '#6366f1',
+              600: '#4f46e5',
+              700: '#4338ca',
+              800: '#3730a3',
+              900: '#312e81',
+              950: '#1e1b4b',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/custom.css">
+</head>
+
+<body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen">
+
+  <!-- Scroll Reading Progress Bar -->
+  <div class="fixed top-0 left-0 right-0 h-1 bg-slate-200 z-50">
+    <div id="reading-progress" class="h-full bg-brand-600 w-0 transition-all duration-75"></div>
+  </div>
+
+  <!-- Header -->
+  <header class="sticky top-0 z-40 glass-nav border-b border-slate-200/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <a href="index.html" class="flex items-center gap-3 group">
+          <div
+            class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-700 to-indigo-500 flex items-center justify-center text-white shadow-md shadow-brand-500/20 group-hover:scale-105 transition-transform">
+            <i data-lucide="graduation-cap" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="font-extrabold text-xl tracking-tight text-slate-900">School <span
+                  class="text-brand-600">Evolution</span></span>
+              <span
+                class="text-[10px] font-bold uppercase tracking-wider bg-indigo-50 text-brand-700 border border-brand-200 px-1.5 py-0.5 rounded">Blog</span>
+            </div>
+            <p class="text-[11px] text-slate-400 font-medium">school.digiritual.com</p>
+          </div>
+        </a>
+
+        <div class="flex items-center gap-4">
+          <a href="index.html"
+            class="inline-flex items-center gap-1.5 text-sm font-semibold text-slate-600 hover:text-brand-600 transition">
+            <i data-lucide="arrow-left" class="w-4 h-4"></i>
+            <span>Back to All Articles</span>
+          </a>
+          <a href="admin.html"
+            class="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-semibold text-brand-700 bg-brand-50 hover:bg-brand-100 border border-brand-200 rounded-lg transition">
+            <i data-lucide="plus-circle" class="w-3.5 h-3.5"></i>
+            <span>Publish Blog</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content Area -->
+  <main class="flex-grow py-10" id="main-content">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Breadcrumb -->
+      <nav class="flex items-center gap-2 text-xs text-slate-500 mb-6">
+        <a href="index.html" class="hover:text-brand-600 transition">Home</a>
+        <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-400"></i>
+        <span id="post-breadcrumb-category" class="hover:text-brand-600 cursor-pointer">Education</span>
+        <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-400"></i>
+        <span id="post-breadcrumb-title" class="text-slate-800 font-medium truncate max-w-xs">Article</span>
+      </nav>
+
+      <!-- Article Header -->
+      <header class="mb-8">
+        <div class="mb-4">
+          <span id="post-category"
+            class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold tracking-wide uppercase bg-brand-50 text-brand-700 border border-brand-200">
+            Category
+          </span>
+        </div>
+
+        <h1 id="post-title"
+          class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-[1.2] mb-6">
+          Article Title Loading...
+        </h1>
+
+        <p id="post-summary" class="text-lg sm:text-xl text-slate-600 leading-relaxed mb-6 font-normal">
+          Article Summary Loading...
+        </p>
+
+        <!-- Author & Meta Box -->
+        <div class="flex flex-wrap items-center justify-between gap-4 py-4 border-y border-slate-200">
+          <div class="flex items-center gap-3">
+            <img id="post-author-avatar" src="" alt="Author"
+              class="w-12 h-12 rounded-full object-cover ring-2 ring-slate-200">
+            <div>
+              <h3 id="post-author-name" class="font-bold text-slate-900 text-sm">Author Name</h3>
+              <p id="post-author-role" class="text-xs text-slate-500">Author Role</p>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-4 text-xs text-slate-500">
+            <span class="flex items-center gap-1.5">
+              <i data-lucide="calendar" class="w-4 h-4 text-slate-400"></i>
+              <span id="post-date">Date</span>
+            </span>
+            <span>•</span>
+            <span class="flex items-center gap-1.5">
+              <i data-lucide="clock" class="w-4 h-4 text-slate-400"></i>
+              <span id="post-readtime">5 min read</span>
+            </span>
+          </div>
+        </div>
+      </header>
+
+      <!-- Cover Image -->
+      <div
+        class="mb-10 rounded-2xl overflow-hidden shadow-lg border border-slate-200/80 bg-slate-100 aspect-[16/9] relative">
+        <img id="post-cover" src="" alt="Cover" class="w-full h-full object-cover">
+      </div>
+
+      <!-- Action Bar (Likes & Share) -->
+      <div
+        class="sticky top-24 z-30 mb-8 bg-white/90 backdrop-blur-md border border-slate-200/80 rounded-2xl p-3 px-5 flex items-center justify-between shadow-sm">
+        <div class="flex items-center gap-3">
+          <button id="clap-btn"
+            class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-slate-100 hover:bg-brand-50 hover:text-brand-600 text-slate-700 font-semibold text-xs sm:text-sm transition">
+            <i data-lucide="thumbs-up" class="w-4 h-4 text-brand-600"></i>
+            <span id="clap-text">Applaud</span>
+            <span id="clap-count" class="ml-1 px-1.5 py-0.5 rounded-full bg-slate-200 text-slate-700 text-xs">24</span>
+          </button>
+        </div>
+
+        <!-- Share Actions -->
+        <div class="flex items-center gap-2">
+          <span class="text-xs text-slate-400 hidden sm:inline">Share:</span>
+          <button id="share-whatsapp"
+            class="p-2 rounded-lg bg-emerald-50 text-emerald-600 hover:bg-emerald-100 transition"
+            title="Share on WhatsApp">
+            <i data-lucide="message-circle" class="w-4 h-4"></i>
+          </button>
+          <button id="share-linkedin" class="p-2 rounded-lg bg-blue-50 text-blue-600 hover:bg-blue-100 transition"
+            title="Share on LinkedIn">
+            <i data-lucide="linkedin" class="w-4 h-4"></i>
+          </button>
+          <button id="share-copy" class="p-2 rounded-lg bg-slate-100 text-slate-600 hover:bg-slate-200 transition"
+            title="Copy article link">
+            <i data-lucide="link" class="w-4 h-4"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Main Body Text -->
+      <article id="post-body"
+        class="article-body bg-white p-6 sm:p-10 rounded-3xl border border-slate-200/80 shadow-sm leading-relaxed">
+        <!-- Injected via post.js -->
+      </article>
+
+      <!-- Tags Section -->
+      <div class="mt-8 flex flex-wrap items-center gap-2">
+        <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider mr-2">Tags:</span>
+        <div id="post-tags" class="flex flex-wrap gap-2">
+          <!-- Tags injected via post.js -->
+        </div>
+      </div>
+
+      <!-- Author Bio Card -->
+      <div
+        class="mt-12 p-6 sm:p-8 bg-gradient-to-br from-brand-50 to-indigo-50/50 rounded-3xl border border-brand-100 flex flex-col sm:flex-row items-center sm:items-start gap-6">
+        <img id="post-author-avatar-bio" src="" alt="Author"
+          class="w-20 h-20 rounded-2xl object-cover shadow-md ring-4 ring-white">
+        <div class="text-center sm:text-left">
+          <span class="text-xs font-bold text-brand-600 uppercase tracking-wider">About the Contributor</span>
+          <h3 id="post-author-name-bio" class="text-xl font-bold text-slate-900 mt-1">Author Name</h3>
+          <p id="post-author-role-bio" class="text-xs text-brand-700 font-medium mb-3">Role</p>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            Contributing to the mission of modernizing educational infrastructure through smart tools, transparent
+            communication, and student-centered innovations.
+          </p>
+        </div>
+      </div>
+
+      <!-- Interactive Comments / Discussion Section -->
+      <section class="mt-14 bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/80 shadow-sm">
+        <div class="flex items-center gap-2 mb-6">
+          <i data-lucide="messages-square" class="w-5 h-5 text-brand-600"></i>
+          <h3 class="text-xl font-bold text-slate-900">Educator & Community Thoughts</h3>
+        </div>
+
+        <!-- Add Comment Form -->
+        <form id="comment-form" class="space-y-4 mb-8">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <input type="text" id="comment-name" required placeholder="Your Name (e.g. Principal Rajesh)"
+              class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500">
+            <input type="text" id="comment-role" placeholder="Your School / Designation (optional)"
+              class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500">
+          </div>
+          <textarea id="comment-text" required rows="3"
+            placeholder="Share your perspective or ask a question regarding this article..."
+            class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500"></textarea>
+          <button type="submit"
+            class="px-6 py-2.5 bg-brand-600 hover:bg-brand-500 text-white font-semibold rounded-xl text-sm transition shadow-sm">
+            Post Thought
+          </button>
+        </form>
+
+        <!-- Comments List -->
+        <div id="comments-list" class="space-y-4">
+          <!-- Comments rendered via JS -->
+        </div>
+      </section>
+
+      <!-- Related Articles Carousel / Grid -->
+      <section class="mt-16">
+        <div class="flex items-center justify-between mb-8">
+          <div>
+            <h3 class="text-2xl font-bold text-slate-900">Recommended Next Reads</h3>
+            <p class="text-sm text-slate-500 mt-1">More insights curated for your school's digital journey</p>
+          </div>
+        </div>
+
+        <div id="related-posts-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Related posts injected by post.js -->
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-slate-900 text-slate-400 border-t border-slate-800 text-sm mt-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 text-center">
+      <div class="flex items-center justify-center gap-2 mb-3">
+        <div class="w-8 h-8 rounded-lg bg-brand-600 flex items-center justify-center text-white">
+          <i data-lucide="graduation-cap" class="w-4 h-4"></i>
+        </div>
+        <span class="font-bold text-white text-base">School Evolution</span>
+      </div>
+      <p class="text-xs text-slate-500">subdomain: school.digiritual.com • Part of Digiritual Network</p>
+      <p class="text-xs text-slate-600 mt-4">© 2026 School Evolution. Built with pure HTML, Tailwind CSS & JavaScript.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Toast Container -->
+  <div id="toast"
+    class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none">
+    <div
+      class="bg-slate-900 text-white px-5 py-3.5 rounded-xl shadow-2xl flex items-center gap-3 border border-slate-700">
+      <i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-400"></i>
+      <span id="toast-message" class="text-sm font-medium">Notification message</span>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/post.js"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>School Evolution Blog | Insights for Modern Educational Institutions</title>
+  <meta name="description"
+    content="Explore insights on EdTech, school ERP automation, smart classrooms, teaching innovation, and student safety from School Evolution.">
+  <meta name="keywords" content="School Evolution, School ERP, EdTech, Smart Classroom, Digiritual, Education Blog">
+  <link rel="canonical" href="https://school.digiritual.com/">
+
+  <!-- Tailwind CSS CDN with Typography & Aspect Ratio plugins -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eef2ff',
+              100: '#e0e7ff',
+              200: '#c7d2fe',
+              300: '#a5b4fc',
+              400: '#818cf8',
+              500: '#6366f1',
+              600: '#4f46e5',
+              700: '#4338ca',
+              800: '#3730a3',
+              900: '#312e81',
+              950: '#1e1b4b',
+            },
+            accent: {
+              teal: '#0d9488',
+              emerald: '#10b981',
+              amber: '#f59e0b'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/custom.css">
+</head>
+
+<body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen">
+
+  <!-- Top Announcement Bar -->
+  <div class="bg-brand-900 text-brand-100 text-xs sm:text-sm py-2 px-4">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <span
+          class="inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold bg-brand-700 text-brand-200">Official
+          Portal</span>
+        <span>Dedicated EdTech & Campus Innovation Blog for <strong>School Evolution</strong></span>
+      </div>
+      <a href="https://digiritual.com" target="_blank" rel="noopener"
+        class="hidden sm:inline-flex items-center gap-1 hover:text-white transition font-medium">
+        <span>Visit Main Site (digiritual.com)</span>
+        <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+      </a>
+    </div>
+  </div>
+
+  <!-- Header / Navigation -->
+  <header class="sticky top-0 z-40 glass-nav border-b border-slate-200/80 transition-all duration-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center gap-3 group">
+          <div
+            class="w-11 h-11 rounded-xl bg-gradient-to-tr from-brand-700 to-indigo-500 flex items-center justify-center text-white shadow-md shadow-brand-500/20 group-hover:scale-105 transition-transform">
+            <i data-lucide="graduation-cap" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="font-extrabold text-xl sm:text-2xl tracking-tight text-slate-900">School <span
+                  class="text-brand-600">Evolution</span></span>
+              <span
+                class="text-[10px] font-bold uppercase tracking-wider bg-indigo-50 text-brand-700 border border-brand-200 px-1.5 py-0.5 rounded">Blog</span>
+            </div>
+            <p class="text-xs text-slate-400 font-medium">school.digiritual.com</p>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex items-center gap-8">
+          <a href="index.html" class="text-brand-600 font-semibold text-sm">Home</a>
+          <a href="#featured-section"
+            class="text-slate-600 hover:text-brand-600 font-medium text-sm transition">Featured</a>
+          <a href="#articles-section" class="text-slate-600 hover:text-brand-600 font-medium text-sm transition">All
+            Articles</a>
+          <a href="#newsletter-section"
+            class="text-slate-600 hover:text-brand-600 font-medium text-sm transition">Newsletter</a>
+        </nav>
+
+        <!-- Right Action Buttons -->
+        <div class="flex items-center gap-3">
+          <a href="admin.html"
+            class="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold text-brand-700 bg-brand-50 hover:bg-brand-100 border border-brand-200 rounded-lg transition shadow-sm">
+            <i data-lucide="plus-circle" class="w-4 h-4"></i>
+            <span class="hidden sm:inline">Publish Blog</span>
+          </a>
+
+          <!-- Mobile Menu Button -->
+          <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-600 hover:text-slate-900 focus:outline-none"
+            aria-label="Toggle menu">
+            <i data-lucide="menu" class="w-6 h-6"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="hidden md:hidden border-b border-slate-200 bg-white px-4 pt-2 pb-4 space-y-2">
+      <a href="index.html"
+        class="block px-3 py-2 rounded-md text-base font-semibold text-brand-600 bg-brand-50">Home</a>
+      <a href="#featured-section"
+        class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-100">Featured Article</a>
+      <a href="#articles-section"
+        class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-100">Browse Articles</a>
+      <a href="#newsletter-section"
+        class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-100">Newsletter</a>
+      <a href="admin.html"
+        class="block px-3 py-2 rounded-md text-base font-medium text-brand-700 bg-brand-50 border border-brand-200">Publish
+        New Post</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section
+    class="relative overflow-hidden bg-gradient-to-b from-slate-100/80 via-white to-slate-50 pt-12 pb-16 border-b border-slate-200/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div class="max-w-3xl mx-auto text-center">
+        <div
+          class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-50 border border-brand-200 text-brand-700 text-xs font-semibold uppercase tracking-wider mb-5">
+          <span class="w-2 h-2 rounded-full bg-brand-600 animate-pulse"></span>
+          Knowledge Hub for 21st-Century Schools
+        </div>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.15]">
+          Empowering Education Through <span
+            class="bg-gradient-to-r from-brand-600 to-indigo-700 bg-clip-text text-transparent">Digital
+            Innovation</span>
+        </h1>
+        <p class="mt-5 text-lg sm:text-xl text-slate-600 leading-relaxed">
+          Expert guides, EdTech trends, smart classroom blueprints, and campus management insights curated specifically
+          for teachers, school leaders, and modern parents.
+        </p>
+
+        <!-- Search & Filter Quick Bar -->
+        <div class="mt-8 relative max-w-2xl mx-auto">
+          <div
+            class="relative flex items-center shadow-lg rounded-2xl bg-white border border-slate-200 p-1.5 focus-within:ring-2 focus-within:ring-brand-500 focus-within:border-transparent transition">
+            <div class="pl-4 text-slate-400">
+              <i data-lucide="search" class="w-5 h-5"></i>
+            </div>
+            <input type="text" id="search-input" placeholder="Search articles by title, topic, or keyword..."
+              class="w-full px-3 py-3 text-slate-800 placeholder-slate-400 bg-transparent focus:outline-none text-base">
+            <button id="clear-search" class="hidden pr-3 text-slate-400 hover:text-slate-600" title="Clear search">
+              <i data-lucide="x-circle" class="w-5 h-5"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Post Hero Section -->
+  <section id="featured-section" class="py-12 border-b border-slate-200/60 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between mb-8">
+        <div class="flex items-center gap-2">
+          <div class="w-2.5 h-6 bg-brand-600 rounded-full"></div>
+          <h2 class="text-2xl font-bold text-slate-900">Featured Article</h2>
+        </div>
+        <span class="text-xs text-slate-400 font-medium uppercase tracking-wider">Editor's Pick</span>
+      </div>
+
+      <!-- Dynamic Featured Article Card -->
+      <div id="featured-article-container">
+        <!-- Rendered via JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Articles Feed & Filtering -->
+  <section id="articles-section" class="py-16 flex-grow">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Category Filter Tabs -->
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-10 pb-4 border-b border-slate-200">
+        <div>
+          <h2 class="text-2xl font-bold text-slate-900">Explore Articles</h2>
+          <p id="results-count" class="text-sm text-slate-500 mt-0.5">Showing all published articles</p>
+        </div>
+
+        <!-- Filter Pills Scrollable -->
+        <div class="flex items-center gap-2 overflow-x-auto soft-thin-scroll max-w-full md:max-w-3xl" id="category-pills">
+          <button
+            class="category-filter-btn active-category px-4 py-2 rounded-xl text-sm font-semibold transition whitespace-nowrap bg-brand-600 text-white shadow-sm"
+            data-category="all">
+            All Topics
+          </button>
+          <!-- Dynamic categories injected by JS -->
+        </div>
+      </div>
+
+      <!-- Articles Grid -->
+      <div id="articles-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Rendered via JS -->
+      </div>
+
+      <!-- Empty State -->
+      <div id="empty-state" class="hidden text-center py-20 bg-white rounded-3xl border border-slate-200 my-8">
+        <div class="w-16 h-16 rounded-2xl bg-slate-100 flex items-center justify-center text-slate-400 mx-auto mb-4">
+          <i data-lucide="book-open" class="w-8 h-8"></i>
+        </div>
+        <h3 class="text-xl font-bold text-slate-800">No articles found</h3>
+        <p class="text-slate-500 max-w-md mx-auto mt-2">We couldn't find any post matching your current search or
+          category filter. Try clearing filters.</p>
+        <button id="reset-filters-btn"
+          class="mt-6 px-5 py-2.5 bg-brand-600 hover:bg-brand-700 text-white font-medium rounded-xl text-sm transition">
+          Reset All Filters
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Newsletter Section -->
+  <section id="newsletter-section"
+    class="bg-gradient-to-br from-brand-900 via-indigo-950 to-slate-900 text-white py-16 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]">
+    </div>
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+      <div
+        class="w-12 h-12 rounded-2xl bg-brand-500/20 border border-brand-400/30 flex items-center justify-center text-brand-300 mx-auto mb-6">
+        <i data-lucide="mail" class="w-6 h-6"></i>
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Stay Ahead of Modern Education Tech</h2>
+      <p class="mt-4 text-base sm:text-lg text-slate-300 max-w-2xl mx-auto">
+        Join over 15,000+ principals, school administrators, and educators receiving our weekly digest on smart campus
+        trends and teaching innovations.
+      </p>
+
+      <form id="newsletter-form"
+        class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3 max-w-lg mx-auto">
+        <input type="email" id="newsletter-email" required placeholder="Enter your official school email"
+          class="w-full px-5 py-3.5 rounded-xl text-slate-900 bg-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-400 text-sm shadow-sm">
+        <button type="submit"
+          class="w-full sm:w-auto px-7 py-3.5 bg-brand-500 hover:bg-brand-400 text-white font-semibold rounded-xl text-sm transition shadow-lg shadow-brand-500/30 whitespace-nowrap">
+          Subscribe Free
+        </button>
+      </form>
+      <p class="text-xs text-slate-400 mt-3">Zero spam. Unsubscribe anytime in one click.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-slate-900 text-slate-400 border-t border-slate-800 text-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+
+        <!-- Brand Info -->
+        <div class="md:col-span-2">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-9 h-9 rounded-lg bg-brand-600 flex items-center justify-center text-white">
+              <i data-lucide="graduation-cap" class="w-5 h-5"></i>
+            </div>
+            <span class="font-bold text-lg text-white">School Evolution</span>
+          </div>
+          <p class="text-slate-400 max-w-sm leading-relaxed text-sm">
+            Empowering schools across India and beyond with state-of-the-art ERP, smart classroom software, paperless
+            administration, and pedagogical insights.
+          </p>
+          <div class="mt-4 flex items-center gap-2 text-xs text-brand-400 font-mono">
+            <span>Subdomain: school.digiritual.com</span>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="text-white font-semibold mb-4 text-xs tracking-wider uppercase">Blog Navigation</h4>
+          <ul class="space-y-2.5">
+            <li><a href="index.html" class="hover:text-white transition">Home</a></li>
+            <li><a href="#featured-section" class="hover:text-white transition">Featured Read</a></li>
+            <li><a href="#articles-section" class="hover:text-white transition">All Posts</a></li>
+            <li><a href="admin.html" class="hover:text-white transition">Publish Article</a></li>
+          </ul>
+        </div>
+
+        <!-- Ecosystem -->
+        <div>
+          <h4 class="text-white font-semibold mb-4 text-xs tracking-wider uppercase">Digiritual Ecosystem</h4>
+          <ul class="space-y-2.5">
+            <li><a href="https://digiritual.com" target="_blank" rel="noopener"
+                class="hover:text-white transition flex items-center gap-1">Digiritual Home <i
+                  data-lucide="external-link" class="w-3 h-3"></i></a></li>
+            <li><a href="https://school.digiritual.com" class="hover:text-white transition">School Evolution Portal</a>
+            </li>
+            <li><a href="#" class="hover:text-white transition">Parent Mobile App</a></li>
+            <li><a href="#" class="hover:text-white transition">Teacher Portal</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div
+        class="mt-12 pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <p>© 2026 School Evolution. A unit of Digiritual. All rights reserved.</p>
+        <p class="flex items-center gap-1">
+          Crafted with HTML, Tailwind CSS & Pure JS for optimal speed and reliability.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification Container -->
+  <div id="toast"
+    class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none">
+    <div
+      class="bg-slate-900 text-white px-5 py-3.5 rounded-xl shadow-2xl flex items-center gap-3 border border-slate-700">
+      <i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-400"></i>
+      <span id="toast-message" class="text-sm font-medium">Notification message</span>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+  </script>
+</body>
+
+</html>
